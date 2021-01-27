@@ -2474,6 +2474,10 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
             if (variableTypes.getVariableType(BpmnAggregatedVariableType.TYPE_NAME) == null) {
                 variableTypes.addTypeBefore(new BpmnAggregatedVariableType(this), SerializableType.TYPE_NAME);
             }
+
+            if (variableTypes.getVariableType(ParallelMultiInstanceLoopVariableType.TYPE_NAME) == null) {
+                variableTypes.addTypeBefore(new ParallelMultiInstanceLoopVariableType(this), SerializableType.TYPE_NAME);
+            }
         }
     }
 
